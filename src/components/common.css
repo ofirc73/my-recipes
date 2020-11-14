@@ -1,0 +1,44 @@
+* {
+    direction: rtl;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    text-align: right;
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, .h4, h5, .h5 {
+    text-align: right;
+}
+
+.dir-ltr {
+    direction: ltr;
+}
+
+.form-check {
+    /* text-align: left; */
+    text-align: right;
+}
+
+.form-check-input {
+    margin-right: -1em;
+}
+
+.form-check-inline .form-check-input{
+    margin-right: 0;
+    margin-left: 0.3rem;   
+        
+}
+
+.align-left {
+    text-align: left;
+}
+
+h2 {
+    font-size: 1.2rem;
+  }
+
+.h5, h5 {
+    font-size: 1rem;
+}

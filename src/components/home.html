@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף מתכונים</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./common.css" type="text/css">
+    <link rel="stylesheet" href="./header.css" type="text/css">
+</head>
+
+<body>
+    <div class="container-fluid header">
+        <nav class="navbar pull-right navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand d-flex" href="#">מחברת מתכונים</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">כל המתכונים</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li> -->
+
+                </ul>
+                <ul class="navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">רישום</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">התחברות</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container md-3 main">
+        <h1 class="">מתכונים</h1>
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <h2>הצג לי את המתכונים</h2>
+            </div>
+            <div class="form-group">
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" checked name="orderProp" class="form-check-input" value="views">הכי
+                        פופולאריים
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" name="orderProp" class="form-check-input" value="createdAt">הכי חדשים
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Search form -->
+                <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+                    <input type="text" class="form-control" placeholder="חיפוש מתכון" aria-label="Search"">
+                </div>
+                <div class=" search-results list-group">
+                    <!-- ngRepeat: recipe in results | limitTo : 10 -->
+                </div>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Search form -->
+                <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+                    <input type="text" class="form-control" placeholder="חיפוש לפי רכיב" ng-model="searchIng"
+                        aria-label="Search" ng-change="findIngredients()">
+                </div>
+                <div class="search-results list-group">
+                    <!-- ngRepeat: ingredient in ingredients | limitTo : 10 -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="multipleIng" value="true">כולם
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" checked class="form-check-input" name="multipleIng" ng-value="false"
+                            value="false">לפחות אחד
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- empty line -->
+        <div class="row my-3">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                </ul>
+            </div>
+        </div>
+        <div class="card-deck"> 0">
+            <div class="row flex-grow-1">
+
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="חביתה טבעונית מקמח עדשים"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/85f9780c8cdd1788d6395c8e66a66e37_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/7AJHZb9CZM" class="">חביתה טבעונית מקמח עדשים</a>
+                                <div class="">17/3/19</div>
+                                <div class="">צפיות: 200</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center "><a href="#!/edit-recipe/7AJHZb9CZM"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                    <!--Move to a directive?-->
+                </div><!-- end ngRepeat: recipe in recipes | filter: filterRecipes | orderBy: byPropName : true -->
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="רוקוט קרומפלי"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/f3efdde9ec46de903622c786cdc56761_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/IsO6poRJQN" class="">רוקוט קרומפלי</a>
+                                <div class="">18/3/19</div>
+                                <div class="">צפיות: 92</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center"><a href="#!/edit-recipe/IsO6poRJQN"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2">
+                    <!--Move to a directive?-->
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="גומבוץ - כופתאות תפוחי אדמה במילוי שזיפים"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/7873028d4c447b54acaf4c62b6d39d0b_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/h2zDcBjDbT" class="">גומבוץ - כופתאות תפוחי אדמה
+                                    במילוי שזיפים</a>
+                                <div class="">24/3/19</div>
+                                <div class="">צפיות: 54</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center"><a href="#!/edit-recipe/h2zDcBjDbT"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="פנקייק טבעוני"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/e528c151a24159280e74b475a16ec9d3_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/wgFQXc2yCH" class="">פנקייק טבעוני</a>
+                                <div class="">17/3/19</div>
+                                <div class="">צפיות: 34</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center"><a href="#!/edit-recipe/wgFQXc2yCH"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2 ">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="טורוש גומבוץ"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/a60ab81ef3c83679c487e1398e8d3f03_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/uXhSl9982U" class="">טורוש גומבוץ</a>
+                                <div class="">22/3/19</div>
+                                <div class="">צפיות: 31</div>
+                            </h5>
+
+
+                        </div>
+                        <div class="card-footer text-center "><a href="#!/edit-recipe/uXhSl9982U"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" alt="קרפים (במקור: בליני)" src="assets/imgs/recipe-imge-ph.jpg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/NLnUhQT6aE" class="ng-binding">קרפים (במקור: בליני)</a>
+                                <div class="">24/3/19</div>
+                                <div class="">צפיות: 28</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center "><a href="#!/edit-recipe/NLnUhQT6aE"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2 ng-pristine ng-untouched ng-valid ng-scope ng-empty">
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top" ng-src="assets/imgs/recipe-imge-ph.jpg"
+                            alt="עוגת שוקולד כשרה לפסח שלא תחליפו אף פעם" src="assets/imgs/recipe-imge-ph.jpg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/BDyuBd6bZf" class="">עוגת שוקולד כשרה לפסח שלא תחליפו
+                                    אף פעם</a>
+                                <div class="">16/4/19</div>
+                                <div class="">צפיות: 17</div>
+                            </h5>
+                        </div>
+                        <div class="card-footer text-center ng-hide" ng-show="false"><a href="#!/edit-recipe/BDyuBd6bZf"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                    <!--Move to a directive?-->
+                </div><!-- end ngRepeat: recipe in recipes | filter: filterRecipes | orderBy: byPropName : true -->
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2 ng-pristine ng-untouched ng-valid ng-scope ng-empty"
+                    ng-model="dietTypes"
+                    ng-repeat="recipe in recipes | filter: filterRecipes | orderBy: byPropName : true">
+                    <!--Move to a directive?-->
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top"
+                            ng-src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/c66b96fab027abe04c574e9897411f33_NaN.jpeg"
+                            alt="פנקייק תפוחים"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/c66b96fab027abe04c574e9897411f33_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/uYb7wHhb0I" class="ng-binding">פנקייק תפוחים</a>
+                                <div class="ng-binding">24/3/19</div>
+                                <div class="ng-binding">צפיות: 11</div>
+                                <!-- <div>{{ownerId}} {{recipe.owner.id}}</div> -->
+                            </h5>
+                            <!-- <a href="#!/edit-recipe/{{recipe.id}}" class="btn btn-primary" ng-show="{{isUserRecipePage}}">עריכה</a> -->
+
+
+                        </div>
+                        <div class="card-footer text-center ng-hide" ng-show="false"><a href="#!/edit-recipe/uYb7wHhb0I"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                    <!--Move to a directive?-->
+                </div><!-- end ngRepeat: recipe in recipes | filter: filterRecipes | orderBy: byPropName : true -->
+                <div class="col-xl-3 col-md-4 col-sm-6 my-2 ng-pristine ng-untouched ng-valid ng-scope ng-empty"
+                    ng-model="dietTypes"
+                    ng-repeat="recipe in recipes | filter: filterRecipes | orderBy: byPropName : true">
+                    <!--Move to a directive?-->
+                    <div class="card h-100">
+                        <!-- make cards the same height as the tallest -->
+                        <img class="card-img-top"
+                            ng-src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/498e2afa593814c9a0bdfa49630bb9ff_NaN.jpeg"
+                            alt="Apple Pie"
+                            src="https://parsefiles.back4app.com/Ubmbhqz8eIdPXGrtk00xDzb9xm9nJHfkf8mtsGyZ/498e2afa593814c9a0bdfa49630bb9ff_NaN.jpeg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title font-italic">
+                                <a href="#!/view-recipe/JlfvG4QAHL" class="ng-binding">Apple Pie</a>
+                                <div class="ng-binding">7/11/20</div>
+                                <div class="ng-binding">צפיות: 10</div>
+                                <!-- <div>{{ownerId}} {{recipe.owner.id}}</div> -->
+                            </h5>
+                            <!-- <a href="#!/edit-recipe/{{recipe.id}}" class="btn btn-primary" ng-show="{{isUserRecipePage}}">עריכה</a> -->
+
+
+                        </div>
+                        <div class="card-footer text-center ng-hide" ng-show="false"><a href="#!/edit-recipe/JlfvG4QAHL"
+                                class="btn btn-primary">עריכה</a></div>
+                    </div>
+                    <!--Move to a directive?-->
+                </div><!-- end ngRepeat: recipe in recipes | filter: filterRecipes | orderBy: byPropName : true -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
