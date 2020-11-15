@@ -15,29 +15,39 @@
 <body>
     <div class="container-fluid header">
         <nav class="navbar pull-right navbar-expand-md navbar-dark bg-dark">
-            <a class="navbar-brand d-flex" href="#">מחברת מתכונים</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav w-100">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">כל המתכונים</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li> -->
-
-                </ul>
-                <ul class="navbar-nav ml-auto w-100 justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">רישום</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">התחברות</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <a class="navbar-brand d-flex" href="#">מחברת מתכונים</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100">
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#!/my-profile" nobr="">הפרופיל שלי</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#!/new-recipe" nobr="">מתכון חדש</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#!/my-recipes">המתכונים שלי</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">כל המתכונים</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto w-100 justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">רישום</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">התחברות</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#">התנתקות</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </div>
@@ -77,8 +87,8 @@
             <div class="col-lg-6">
                 <!-- Search form -->
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                    <input type="text" class="form-control" placeholder="חיפוש לפי רכיב" ng-model="searchIng"
-                        aria-label="Search" ng-change="findIngredients()">
+                    <input type="text" class="form-control" placeholder="חיפוש לפי רכיב"
+                        aria-label="Search" >
                 </div>
                 <div class="search-results list-group">
                     <!-- ngRepeat: ingredient in ingredients | limitTo : 10 -->
@@ -92,7 +102,7 @@
                 </div>
                 <div class="form-check-inline">
                     <label class="form-check-label">
-                        <input type="radio" checked class="form-check-input" name="multipleIng" ng-value="false"
+                        <input type="radio" checked class="form-check-input" name="multipleIng"
                             value="false">לפחות אחד
                     </label>
                 </div>

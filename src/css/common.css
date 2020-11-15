@@ -42,3 +42,49 @@ h2 {
 .h5, h5 {
     font-size: 1rem;
 }
+
+.has-error .form-control {
+    border-color: #a94442;
+  }
+  
+  /*
+  * set to hidden
+  */
+  #err {
+    visibility: hidden;
+  }
+  
+  #email:invalid{
+    background-color: lightpink;
+  }
+  
+  input:invalid ~ .errMsg {
+    color: var(--red);
+    font-weight: bold;  
+  }
+  
+  .form-group-mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .striped {
+    background-color:#efefef;
+  }
+
+/* ul.list-group.list-group-striped li:nth-of-type(odd){
+    background: blue;
+}
+ul.list-group.list-group-striped li:nth-of-type(even){
+    background: purple;
+} */
+
+/**
+* When main menu is not collapsed
+**/
+@media only screen and (min-width: 768px) {
+    /* set menu items to the left */
+    .left-menu-items {
+        margin-right: auto!important;
+    }
+}
+  
